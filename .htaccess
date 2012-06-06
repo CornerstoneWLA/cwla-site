@@ -1,0 +1,19 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+	# Turn off the normal Apache directory indexing
+	Options -Indexes
+	# Hey-ho let's go!
+    RewriteEngine On
+    # Make the admin still accessible from /wp-admin
+    RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
+    RewriteRule .*  core/wp-admin/$1 [L,R=301]
+    # Base is the URL path of the home directory
+    RewriteBase /
+    RewriteRule ^$ core/index.php [L]
+    # Skip real files and directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    # Otherwise send it to WordPress
+    RewriteRule .* core/index.php [L]
+</IfModule>
+# END WordPress
