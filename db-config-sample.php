@@ -3,7 +3,6 @@ Use it to define the database settings for your specific machine.
 During deployment, it will need to be manually updated on dev, staging,
 and production environments to connect to the correct database. ** //
 
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'database_name_here');
