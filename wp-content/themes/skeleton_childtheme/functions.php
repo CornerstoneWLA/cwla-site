@@ -128,7 +128,7 @@ if ( !function_exists( 'st_registerstyles' ) ) {
 
 add_action('get_header', 'st_registerstyles');
 function st_registerstyles() {
-	$theme  = wp_get_theme();
+	$theme  = get_theme( get_current_theme());
 	$version = $theme['Version'];
   	$stylesheets = wp_enqueue_style('skeleton', get_bloginfo('template_directory').'/skeleton.css', false, $version, 'screen, projection');
     $stylesheets .= wp_enqueue_style('theme', get_bloginfo('stylesheet_directory').'/style.css', 'skeleton', $version, 'screen, projection');
@@ -251,7 +251,7 @@ function skeleton_setup() {
 
 		// Add a way for the custom header to be styled in the admin panel that controls
 		// custom headers. See skeleton_admin_header_style(), below.
-		add_theme_support( 'custom-header', array( 'admin-head-callback' => 'skeleton_admin_header_style' ));
+		add_custom_image_header( '', 'skeleton_admin_header_style' );
 
 		// ... and thus ends the changeable header business.
 
