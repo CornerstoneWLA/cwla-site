@@ -17,16 +17,14 @@
 // ** MySQL settings - including the db-config.php file (which is not in svn) ** //
 require_once(dirname(__FILE__) . '/db-config.php');
 
-/** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-    define('ABSPATH', dirname(__FILE__) . '/core/');
-
-define('WP_CONTENT_DIR', realpath(ABSPATH.'../wp-content/'));
-
-define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/core');
-define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 
+define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
+define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
+
+define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins' );
+define('WP_PLUGIN_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content/plugins');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -73,13 +71,15 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
 
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+	define('ABSPATH', dirname(__FILE__) . '/core/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+?>
