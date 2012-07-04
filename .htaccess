@@ -16,24 +16,20 @@ RewriteCond %{REQUEST_FILENAME} !-d
 ## Otherwise send it to WordPress
 RewriteRule . /index.php [L]
 
-</IfModule>
-
-## END WORDPRESS ##
-
 ## Make the admin still accessible from /wp-admin
 RewriteCond %{REQUEST_URI} ^/wp-admin/?(.*)
 RewriteRule .*  core/wp-admin/$1 [L,R=301]
+
+</IfModule>
+
+## END WORDPRESS ##
 
 ## Turn off the normal Apache directory indexing (for privacy)
 # Options All -Indexes
 
 ## Protect .htaccess - deny any users accessing a file on the site beginning with "hta"
-<Files ~ "^.*\.([Hh][Tt][Aa])">
-order allow,deny
-deny from all
-satisfy all
-</Files>
-
-# BEGIN WordPress
-
-# END WordPress
+# <Files ~ "^.*\.([Hh][Tt][Aa])">
+# order allow,deny
+# deny from all
+# satisfy all
+# </Files>
