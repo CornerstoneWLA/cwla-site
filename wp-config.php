@@ -14,39 +14,17 @@
  * @package WordPress
  */
 
-// ** This file will be ignored in the SVN repository.
-// ** Use it to define the database settings for your specific machine.
-// ** During deployment, it will need to be manually updated on dev, staging,
-// ** and production environments to connect to the correct database. */
+// ** MySQL settings - including the db-config.php file (which is not in svn) ** //
+require_once(dirname(__FILE__) . '/db-config.php');
 
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/core');
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'cornerstone');
+define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
+define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
 
-/** MySQL database username */
-define('DB_USER', 'root');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'root');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
-
-define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk');
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk/core');
-
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/cornerstone/trunk/wp-content' );
-define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk/wp-content');
-
-define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/cornerstone/trunk/wp-content/plugins' );
-define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk/wp-content/plugins');
+define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins' );
+define('WP_PLUGIN_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content/plugins');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -99,7 +77,7 @@ define('WP_DEBUG', true);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/cornerstone/trunk/core/');
+	define('ABSPATH', dirname(__FILE__) . '/core/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
