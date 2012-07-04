@@ -33,3 +33,4 @@ RewriteRule .*  core/wp-admin/$1 [L,R=301]
 # deny from all
 # satisfy all
 # </Files>
+
