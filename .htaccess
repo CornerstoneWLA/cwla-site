@@ -33,3 +33,7 @@ order allow,deny
 deny from all
 satisfy all
 </Files>
+
+# BEGIN WordPress
+
+# END WordPress
