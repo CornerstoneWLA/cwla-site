@@ -3,7 +3,8 @@
 // ** This file will be ignored in the SVN repository.
 // ** Use it to define the database settings for your specific machine.
 // ** During deployment, it will need to be manually updated on dev, staging,
-// ** and production environments to connect to the correct database. */
+// ** and production environments to connect to the correct database.
+// ** Rename this file to db-config.php after you have entered your information. */
 
 
 // ** MySQL settings - You can get this info from your web host ** //
