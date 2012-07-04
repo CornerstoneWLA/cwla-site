@@ -3,7 +3,13 @@
  * The base configurations of the WordPress.
  *
  * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
+ * Secret Keys, WordPress Language, and ABSPATH.
+ *
+ * It has also been modified for use with the CWLA site to include directory-specific configurations.
+ * These give the ability to store the core WordPress files in a separate directory that isn't touched
+ * by the development team.
+ *
+ * You can find more information
  * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
  * wp-config.php} Codex page. You can get the MySQL settings from your web host.
  *
@@ -14,21 +20,15 @@
  * @package WordPress
  */
 
-// ** This file will be ignored in the SVN repository.
-// ** Use it to define the database settings for your specific machine.
-// ** During deployment, it will need to be manually updated on dev, staging,
-// ** and production environments to connect to the correct database. */
-
-
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'cornerstone');
+define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'username_here');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -39,17 +39,29 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk');
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk/core');
 
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/cornerstone/trunk/wp-content' );
-define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk/wp-content');
+// ** Directory Settings ** //
+// ** These settings should work on CWLA servers, but you may need to change them to run the site locally. ** //
+/** URL of Homepage on your server (usually just '/') - overrides admin dashboard settings */
+define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 
-define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/cornerstone/trunk/wp-content/plugins' );
-define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/cornerstone/trunk/wp-content/plugins');
+/** Location of Wordpress core files - overrides admin dashboard settings */
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/core');
+
+/** Location of wp-content directory */
+define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
+define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content');
+
+/** Location of plugins directory */
+define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins' );
+define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins');
+
 
 /**#@+
- * Authentication Unique Keys and Salts.
+ * Authentication Unique Keys and Salts
+ *
+ * REMINDER: If you change these, be sure they are also changed on dev, staging, and production servers.
+ * Keys and salts should always match across development environments.
  *
  * Change these to different unique phrases!
  * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
@@ -67,6 +79,7 @@ define('LOGGED_IN_SALT',   'z&6Mrey[0dz3%?7%9Z4XjoKn|R*TAcot<F&@ng1nm_d8|?R?6Pqq
 define('NONCE_SALT',       't<Tv@6N:,2+`S[!T08wwI$(k)&5&-f*|0j^aDsjL|Z%@n,mC|3Txd~9#{Y4&*=+;');
 
 /**#@-*/
+
 
 /**
  * WordPress Database Table prefix.
@@ -95,13 +108,14 @@ define('WPLANG', '');
  */
 define('WP_DEBUG', true);
 
-/* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/cornerstone/trunk/core/');
+	define('ABSPATH', dirname(__FILE__) . '/core/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/* That's all, stop editing! Happy blogging. */
 
 ?>
