@@ -1,18 +1,18 @@
 /*
-Theme Name: Skeleton Child Theme
-Theme URI: http://www.simplethemes.com
+Theme Name: CWLA Theme
+Theme URI: http://www.cornerstonewla.org/
 Description: A simple WordPress theme based on the Skeleton RWD framework
-Version: 1.6
-Author: Simple Themes
-Author URI: http://www.simplethemes.com
+Version: 1.0
+Author: Abe Serrano, Dustin Platte & Luke Elmers
 Template: skeleton
-License: GPL
-License URI: http://www.opensource.org/licenses/gpl-license.php
+License: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
 */
 
 
 /* Table of Contents
 ==================================================
+	#Font Includes
 	#Global Reset
 	#Structural Customization
 	#Header
@@ -30,6 +30,91 @@ License URI: http://www.opensource.org/licenses/gpl-license.php
 	#WP Gallery
 	#Misc
 */
+
+
+
+/* @group Font Includes */
+
+@font-face {
+    font-family: 'ChaparralProBold';
+    src: url('fonts/chaparralpro-bold-webfont.eot');
+    src: url('fonts/chaparralpro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chaparralpro-bold-webfont.woff') format('woff'),
+         url('fonts/chaparralpro-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ChaparralProBoldItalic';
+    src: url('fonts/chaparralpro-boldit-webfont.eot');
+    src: url('fonts/chaparralpro-boldit-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chaparralpro-boldit-webfont.woff') format('woff'),
+         url('fonts/chaparralpro-boldit-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ChaparralProItalic';
+    src: url('fonts/chaparralpro-italic-webfont.eot');
+    src: url('fonts/chaparralpro-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chaparralpro-italic-webfont.woff') format('woff'),
+         url('fonts/chaparralpro-italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ChaparralProRegular';
+    src: url('fonts/chaparralpro-regular-webfont.eot');
+    src: url('fonts/chaparralpro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/chaparralpro-regular-webfont.woff') format('woff'),
+         url('fonts/chaparralpro-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MetaBold';
+    src: url('fonts/meta-bold-webfont.eot');
+    src: url('fonts/meta-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/meta-bold-webfont.woff') format('woff'),
+         url('fonts/meta-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MetaCaps';
+    src: url('fonts/meta-caps-webfont.eot');
+    src: url('fonts/meta-caps-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/meta-caps-webfont.woff') format('woff'),
+         url('fonts/meta-caps-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'MetaNormal';
+    src: url('fonts/meta-normal-webfont.eot');
+    src: url('fonts/meta-normal-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/meta-normal-webfont.woff') format('woff'),
+         url('fonts/meta-normal-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* @end */
+
+
 
 /* @group Global Reset */
 
@@ -59,12 +144,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		
 	pre,code {
 		white-space: normal;
-		background-color: #ededed;
-		border-bottom: 1px solid #d9d9d9;
-		border-top: 1px solid #d9d9d9;
+		background-color: #ffffff;
+		border-bottom: 1px solid #e0e0e0;
+		border-top: 1px solid #e0e0e0;
 		display: block;
 		width: 100%;
-		font: 12px/24px Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter","DejaVu Sans Mono","Bitstream Vera Sans Mono","Liberation Mono","Nimbus Mono L",Monaco,"Courier New",Courier,monospace;
+		font: 12px/24px "MetaNormal","MetaBold",Helvetica,Arial,sans-serif;
 		margin: 5px 0;
 		padding: 5px;
 }
@@ -73,6 +158,7 @@ p code {display: inline;}
 
 body {
 	line-height: 150%;
+	border-top: 5px solid #ff8b00;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -104,7 +190,7 @@ body {
 /* Footer Styles */
 
 #footer {
-	border-top: 1px solid #d6d6d6;
+	background-color: #ff8b00;
 	font-size: .9em;
 }
 #footer.noborder {
@@ -113,10 +199,11 @@ body {
 }
 
 #footer #credits {
-	font-size: 11px;
-	color: #9f9f9f;
+	font-size: 14px;
+	color: #fff;
 }
 
+/* REMOVE?
 a.themeauthor {
 	display: block;
 	width: 75px;
@@ -127,12 +214,14 @@ a.themeauthor {
 	text-indent: -9999em;
 	background: url(images/icons/stlogo.png) no-repeat right center;
 }
+end REMOVE */
 
 
 /* @end */
 
 /* @group Header */
 
+/* REMOVE?
 #site-title {
 	margin: 0;
 	padding: 0;
@@ -155,7 +244,8 @@ a.themeauthor {
 
 #header #site-title a:hover {
 	color: #3253ad;
-}	
+}
+end REMOVE */	
 
 /* Header Tagline */
 
@@ -166,6 +256,29 @@ a.themeauthor {
 	line-height: 28px;
 	color: #7d7d7d;
 	letter-spacing: -1px;
+}
+
+/* Logo */
+#logo {
+	margin: 20px 0 20px 10px;
+}
+
+/* "Join Us" Text */
+
+#join-us {
+	font-family: "MetaBold",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	float: right;
+	margin: 25px 10px 20px 0;
+}
+
+#join-us div {
+	font-family:"MetaNormal",Helvetica,Arial,sans-serif;
+}
+
+#join-us div span {
+	text-decoration: underline;
 }
 
 /* Image Header */
@@ -311,7 +424,7 @@ a.themeauthor {
 	
 	
 	h1 {line-height: 140%; margin-bottom: 14px;}
-	h2 {line-height: 130%; margin-bottom: 10px; }
+	h2 {line-height: 130%; margin-bottom: 10px; font-family:"MetaBold",Helvetica,Arial,sans-serif; font-size: 30px;}
 	h3 {line-height: 130%; margin-bottom: 8px; }
 	h4 {line-height: 125%; margin-bottom: 8px; }
 	h5 {line-height: 120%; margin-bottom: 8px;}
@@ -329,7 +442,7 @@ a.themeauthor {
 	.normal {font-weight: normal;}
 	.bolder {font-weight: bolder;}
 	
-	p { margin: 0 0 20px 0; }
+	p { margin: 0 0 20px 0; font-family:"MetaNormal",Helvetica,Arial,sans-serif; font-size:15px; }
 	p img { margin: 0; }
 	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
 	
@@ -349,8 +462,8 @@ a.themeauthor {
 
 /* #Links
 ================================================== */
-	a, a:visited {text-decoration: underline; outline: 0; }
-	a:hover, a:focus { color: #000; text-decoration: none;}
+	a, a:visited {color: #ff8b00; text-decoration: none; outline: 0; }
+	a:hover, a:focus { color: #333; text-decoration: none;}
 	p a, p a:visited { line-height: inherit; }
 	
 
@@ -485,10 +598,11 @@ table td {
 
 .widget-container ul {
 	margin-left: 0;
+	font-family:"MetaNormal",Helvetica,Arial,sans-serif;
 }
 
 .widget-title {
-	font-weight: bold;
+	font-family:"MetaBold",Helvetica,Arial,sans-serif;
 	font-size: 1.5em;
 }
 
