@@ -29,6 +29,9 @@ License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
 	#Comments
 	#WP Gallery
 	#Misc
+	#Tablet (Portrait)
+    #Mobile (Portrait) 
+    #Mobile (Landscape)
 */
 
 
@@ -139,7 +142,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		border-collapse: collapse;
 		border-spacing: 0; }
 	table.pad td {
-	padding: 10px;
+		padding: 10px;
 	}
 		
 	pre,code {
@@ -158,9 +161,11 @@ p code {display: inline;}
 
 body {
 	line-height: 150%;
+	background: #ffffff;
 	border-top: 5px solid #ff8b00;
 	-webkit-text-size-adjust: 100%;
 }
+
 
 /* @end */
 
@@ -183,39 +188,53 @@ body {
 	float: right;
 }
 
-/* Give the main wrapper a separate background color */
+/* Main Wrapper */
 
-#wrap {}
+#wrap {
+	float: left;
+	padding: 0 0 0 38px;
+}
 
 /* Footer Styles */
 
 #footer {
 	background-color: #ff8b00;
 	font-size: .9em;
+	position: absolute;
+	left: 0;
+	right: 0;
 }
+
 #footer.noborder {
 	border: none;
 	padding-top: 0;
 }
 
-#footer #credits {
-	font-size: 14px;
+#footer #footer-copy {
 	color: #fff;
+	text-align: left;
+	padding: 32px 0 32px 47px;	
 }
 
-/* REMOVE?
-a.themeauthor {
-	display: block;
-	width: 75px;
-	height: 12px;
-	margin: 0px auto;
-	float: right;
-	text-decoration: none;
-	text-indent: -9999em;
-	background: url(images/icons/stlogo.png) no-repeat right center;
+#footer #footer-copy #copyright {
+	font-family: "MetaNormal",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	margin: 0 0 7px 0;
 }
-end REMOVE */
 
+#footer #footer-copy .footer-link {
+	font-family: "MetaBold",Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+#footer #footer-copy .footer-divider {
+	font-family: "MetaNormal",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+	padding: 0 12px 0 12px;
+	vertical-align: middle;
+}
 
 /* @end */
 
@@ -1986,3 +2005,47 @@ img.scale-with-grid {
 .bypostauthor,.gallery-caption {}
 
 /* @end */
+    
+
+    
+/* #Tablet (Portrait)
+================================================== */   
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        //.container { width: 768px; }
+    }
+
+/* @end */
+
+    
+    
+/*  #Mobile (Portrait) 
+================================================== */
+    
+    /* Note: Design for a width of 320px */
+    
+    @media only screen and (max-width: 767px) {
+        //.container { width: 300px; }
+        #footer #credits { padding: 32px 0 0 38px;	}
+}       
+                
+    }
+    
+/* @end */
+
+
+    
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+    
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        //.container { width: 420px; }
+        #footer #credits { padding: 32px 0 0 38px;	}        
+    }
+     
+/* @end */
+
