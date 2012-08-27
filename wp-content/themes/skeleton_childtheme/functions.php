@@ -864,22 +864,31 @@ if ( !function_exists( 'st_footer' ) ) {
 add_action('wp_footer', 'st_footer');
 	do_action('st_footer');
 	function st_footer() {
-		//loads sidebar-footer.php
+		// loads sidebar-footer.php
 		get_sidebar( 'footer' );
-		// prints site credits
+		// retrieve stylesheet directory for relative links
+		$stylesheet_directory = get_bloginfo('stylesheet_directory');
+		// prints copyright notice & links
 		echo '<div id="footer-copy">';
 		echo '<div id="copyright">';
 		echo of_get_option('footer_text');
 		echo '</div>';
-		echo '<span class="footer-link">TODO link A</span>';
+		echo '<span class="footer-link"><a href="#TODO">Affiliations</a></span>';
 		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link">TODO link b</span>';
+		echo '<span class="footer-link"><a href="#TODO">Location &amp; Services</a></span>';
 		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link">TODO link c</span>';
+		echo '<span class="footer-link"><a href="#TODO">Community Groups</a></span>';
 		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link">TODO link d</span>';
+		echo '<span class="footer-link"><a href="#TODO">Equipping Classes</a></span>';
 		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link">TODO link e</span>';
+		echo '<span class="footer-link"><a href="#TODO">Podcast</a></span>';
+		echo '</div>';
+		// prints social media links
+		echo '<div id="footer-social" class="container">';
+		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_twitter.gif" alt="Cornerstone WLA on Twitter" /></a>';
+		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_facebook.gif" alt="Cornerstone WLA on Facebook" /></a>';
+		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_vimeo.gif" alt="Cornerstone WLA on Vimeo" /></a>';
+		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_flickr.gif" alt="Cornerstone WLA on Flickr" /></a>';
 		echo '</div>';
 }
 
