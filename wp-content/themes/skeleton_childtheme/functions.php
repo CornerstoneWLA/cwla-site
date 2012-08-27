@@ -853,7 +853,8 @@ if (!function_exists('st_before_footer'))  {
     function st_before_footer() {
 			$footerwidgets = is_active_sidebar('first-footer-widget-area') + is_active_sidebar('second-footer-widget-area') + is_active_sidebar('third-footer-widget-area') + is_active_sidebar('fourth-footer-widget-area');
 			$class = ($footerwidgets == '0' ? 'noborder' : 'normal');
-			echo '<div class="clear"></div><div id="footer" class="'.$class.' sixteen columns">';
+			echo "</div><!--/#wrap.container-->"."\n";			
+			echo '<div class="clear"></div><div id="footer" class="'.$class.'">';
     }
 }
 
@@ -866,9 +867,20 @@ add_action('wp_footer', 'st_footer');
 		//loads sidebar-footer.php
 		get_sidebar( 'footer' );
 		// prints site credits
-		echo '<div id="credits">';
+		echo '<div id="footer-copy">';
+		echo '<div id="copyright">';
 		echo of_get_option('footer_text');
-		echo '<br /><a class="themeauthor" href="http://www.simplethemes.com" title="Simple WordPress Themes">WordPress Themes</a></div>';
+		echo '</div>';
+		echo '<span class="footer-link">TODO link A</span>';
+		echo '<span class="footer-divider">|</span>';
+		echo '<span class="footer-link">TODO link b</span>';
+		echo '<span class="footer-divider">|</span>';
+		echo '<span class="footer-link">TODO link c</span>';
+		echo '<span class="footer-divider">|</span>';
+		echo '<span class="footer-link">TODO link d</span>';
+		echo '<span class="footer-divider">|</span>';
+		echo '<span class="footer-link">TODO link e</span>';
+		echo '</div>';
 }
 
 }
@@ -880,7 +892,7 @@ if (!function_exists('st_after_footer'))  {
 	
     function st_after_footer() {
 			echo "</div><!--/#footer-->"."\n";
-			echo "</div><!--/#wrap.container-->"."\n";
+			// echo "</div><!--/#wrap.container-->"."\n";
 			// Google Analytics
 			if (of_get_option('footer_scripts') <> "" ) {
 				echo '<script type="text/javascript">'.stripslashes(of_get_option('footer_scripts')).'</script>';
