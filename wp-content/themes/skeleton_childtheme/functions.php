@@ -134,7 +134,7 @@ function st_registerstyles() {
     $stylesheets .= wp_enqueue_style('theme', get_bloginfo('stylesheet_directory').'/style.css', 'skeleton', $version, 'screen, projection');
   	$stylesheets .= wp_enqueue_style('layout', get_bloginfo('template_directory').'/layout.css', 'theme', $version, 'screen, projection');
     $stylesheets .= wp_enqueue_style('formalize', get_bloginfo('template_directory').'/formalize.css', 'theme', $version, 'screen, projection');
-    $stylesheets .= wp_enqueue_style('superfish', get_bloginfo('template_directory').'/superfish.css', 'theme', $version, 'screen, projection');
+    //$stylesheets .= wp_enqueue_style('superfish', get_bloginfo('template_directory').'/superfish.css', 'theme', $version, 'screen, projection');
 		if ( class_exists( 'jigoshop' ) ) {
 	  $stylesheets .= wp_enqueue_style('jigoshop', get_bloginfo('template_directory').'/jigoshop.css', 'theme', $version, 'screen, projection');
 		}
@@ -173,7 +173,7 @@ add_action('init', 'st_header_scripts');
 function st_header_scripts() {
   $javascripts  = wp_enqueue_script('jquery');
   $javascripts .= wp_enqueue_script('custom',get_bloginfo('template_url') ."/javascripts/app.js",array('jquery'),'1.2.3',true);
-	$javascripts .= wp_enqueue_script('superfish',get_bloginfo('template_url') ."/javascripts/superfish.js",array('jquery'),'1.2.3',true);
+	$javascripts .= wp_enqueue_script('superfish',get_stylesheet_directory_uri() ."/javascripts/superfish.js",array('jquery'),'1.2.3',true); // using get_stylesheet_directory_uri() to point to child theme directory instead of parent directory
 	$javascripts .= wp_enqueue_script('formalize',get_bloginfo('template_url') ."/javascripts/jquery.formalize.min.js",array('jquery'),'1.2.3',true);
 	echo apply_filters ('child_add_javascripts',$javascripts);
 }
