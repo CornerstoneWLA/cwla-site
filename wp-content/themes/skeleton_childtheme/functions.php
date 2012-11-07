@@ -738,6 +738,7 @@ if ( !function_exists( 'st_navbar' ) ) {
 function st_navbar() {
 	echo '<div id="navigation" class="row sixteen columns">';
 	wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary'));
+	do_shortcode( '[responsive_slider]' );
 	echo '</div><!--/#navigation-->';
 }
 
