@@ -150,11 +150,13 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 	position: relative;
 }
 .responsive-slider.flexslider .slide .slide-title {
+	display: none;
 	margin: 0;
 	padding: 0;
 }
 .responsive-slider.flexslider .slide-title a {
-	position: absolute;
+	display: none;
+	/*position: absolute;
 	top: 0;
 	right: 0;
 	font-size: 18px;
@@ -164,9 +166,9 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 	background: rgba(0,0,0,.3);
 	text-shadow: none;
 	margin: 0;
-	padding: .5em 1em;
+	padding: .5em 1em;*/
 }
 .responsive-slider.flexslider .slide-title a:hover {
-	color: #fff;
-	background: rgba(0,0,0,.5);
+	/*color: #fff;
+	background: rgba(0,0,0,.5);*/
 }

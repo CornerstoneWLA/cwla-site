@@ -34,3 +34,7 @@ RewriteRule .*  core/wp-admin/$1 [L,R=301]
 # satisfy all
 # </Files>
 
+
+# BEGIN WordPress
+
+# END WordPress

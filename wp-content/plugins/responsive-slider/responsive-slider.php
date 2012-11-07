@@ -324,7 +324,7 @@ function responsive_slider_metabox_1() {
 	$slide_link_url = get_post_meta( $post->ID, '_slide_link_url', true ); ?>
 	
 	<p>URL: <input type="text" style="width: 90%;" name="slide_link_url" value="<?php echo esc_attr( $slide_link_url ); ?>" /></p>
-	<span class="description"><?php echo _e( 'The URL this slide should link to.', 'responsive-slider' ); ?></span>
+	<span class="description"><?php echo _e( 'The URL this slide should link to. You must include http:// at the beginning.', 'responsive-slider' ); ?></span>
 	
 <?php }
 
