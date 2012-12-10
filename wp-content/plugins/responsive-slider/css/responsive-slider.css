@@ -6,7 +6,7 @@
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  */
- 
+
 /* Browser Resets */
 .flex-container a:active,
 .flexslider a:active {outline: none;}
@@ -150,25 +150,31 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 	position: relative;
 }
 .responsive-slider.flexslider .slide .slide-title {
-	display: none;
 	margin: 0;
 	padding: 0;
 }
-.responsive-slider.flexslider .slide-title a {
-	display: none;
-	/*position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 18px;
-	line-height: 1.3em;
-	color: #fff;
-	background: #222;
-	background: rgba(0,0,0,.3);
-	text-shadow: none;
-	margin: 0;
-	padding: .5em 1em;*/
+.responsive-slider.flexslider .slide-title a, .responsive-slider.flexslider .slide-title a:hover {
+	position: absolute;
+	top: 75px;
+	left: 40px;
+	font-family: "MetaBold",Helvetica,Arial,sans-serif;
+	font-size: 48px;
+	color: #fff !important;
+	text-shadow: -1px 1px 2px #000;
+	text-transform: none;
 }
-.responsive-slider.flexslider .slide-title a:hover {
-	/*color: #fff;
-	background: rgba(0,0,0,.5);*/
+
+.slide-subtitle {
+	margin: 0;
+	padding: 0;
+}
+.slide-subtitle a, .slide-subtitle a:hover {
+	position: absolute;
+	top: 125px;
+	left: 40px;
+	font-family: "ChaparralProBoldItalic",Helvetica,Arial,sans-serif;
+	font-size: 72px;
+	color: #fff !important;
+	text-shadow: -1px 1px 2px #000;
+	text-transform: none;
 }

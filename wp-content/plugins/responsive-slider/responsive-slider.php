@@ -158,7 +158,7 @@ function responsive_slider_register_cpt() {
 		'capability_type'      => 'post',
 		'hierarchical'         => false,
 		'menu_position'        => 20,
-		'supports'             => array( 'title','thumbnail', 'page-attributes' ),
+		'supports'             => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 		'taxonomies'           => array(),
 		'has_archive'          => true,
 		'show_in_nav_menus'    => false
@@ -259,7 +259,8 @@ function responsive_slider() {
 							<?php endif; ?>
 						
 						<h2 class="slide-title"><a href="<?php echo get_post_meta( $post->ID, "_slide_link_url", true ); ?>" title="<?php the_title_attribute(); ?>" ><?php the_title(); ?></a></h2>
-					
+						<div class="slide-subtitle"><a href="<?php echo get_post_meta( $post->ID, "_slide_link_url", true ); ?>" title="<?php the_title_attribute(); ?>" ><?php the_content(); ?></a></div>
+
 					</div><!-- #slide-x -->
 				
 				</li>
@@ -322,7 +323,7 @@ function responsive_slider_metabox_1() {
              
 	/* Retrieve the metadata values if they already exist. */
 	$slide_link_url = get_post_meta( $post->ID, '_slide_link_url', true ); ?>
-	
+
 	<p>URL: <input type="text" style="width: 90%;" name="slide_link_url" value="<?php echo esc_attr( $slide_link_url ); ?>" /></p>
 	<span class="description"><?php echo _e( 'The URL this slide should link to. You must include http:// at the beginning.', 'responsive-slider' ); ?></span>
 	
@@ -337,7 +338,7 @@ function responsive_slider_save_meta( $post_id, $post ) {
 	
 	if ( isset( $_POST['slide_link_url'] ) ) {
 		update_post_meta( $post_id, '_slide_link_url', strip_tags( $_POST['slide_link_url'] ) );
-	}	
+	}
 }
 
 /**
