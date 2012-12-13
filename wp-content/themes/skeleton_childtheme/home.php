@@ -61,7 +61,8 @@ if( have_posts() ) {
 		if($wp_query->have_posts()) {
 			$wp_query->the_post(); 
 			$more = 0; 
-			if(!in_array(get_the_category()[0], $shown_categories)) { ?>
+			$category = get_the_category();
+			if(!in_array($category[0]->cat_name, $shown_categories)) { ?>
 		  		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 					<h4><?php the_category(', ') ?></h4>
 					<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
@@ -73,7 +74,7 @@ if( have_posts() ) {
 					</div>
 					<br style="clear:both;" />
 				<?php $i++; ?>
-				<?php $shown_categories[] = get_the_category()[0]; ?>
+				<?php $shown_categories[] = $category[0]->cat_name; ?>
 				<?php if($i == 3) { ?>
 					<a href="">View All Recent Posts</a>
 				<?php } ?>
