@@ -134,9 +134,7 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 	$image[1] >= HEADER_IMAGE_WIDTH ) :
 	// Houston, we have a new header image!
 	$image_attr = array(
-				'class'	=> "scale-with-grid",
-				'alt'	=> trim(strip_tags( $attachment->post_excerpt )),
-				'title'	=> trim(strip_tags( $attachment->post_title ))
+				'class'	=> "scale-with-grid"
 				);
 	echo '<div id="header_image" class="row sixteen columns">'.get_the_post_thumbnail( $post->ID, array("HEADER_IMAGE_WIDTH","HEADER_IMAGE_HEIGHT"), $image_attr ).'</div>';
 	elseif ( get_header_image() ) : ?>
