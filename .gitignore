@@ -17,6 +17,7 @@
 !wp-content/
 !wordpress
 !README.md
+!LICENSE.md
 
 # Ignore everything in the "wp-content" directory, except the "plugins"
 # and "themes" directories.
