@@ -46,7 +46,7 @@ define('DB_COLLATE', '');
 define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 
 /** Location of Wordpress core files - overrides admin dashboard settings */
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/core');
+define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
 
 /** Location of wp-content directory */
 define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
@@ -111,7 +111,7 @@ define('WP_DEBUG', true);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/core/');
+	define('ABSPATH', dirname(__FILE__) . '/wordpress/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
