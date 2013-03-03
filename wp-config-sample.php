@@ -60,23 +60,20 @@ define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins
 /**#@+
  * Authentication Unique Keys and Salts
  *
- * REMINDER: If you change these, be sure they are also changed on dev, staging, and production servers.
- * Keys and salts should always match across development environments.
- *
  * Change these to different unique phrases!
  * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
  * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '-9|Rv|pwr9&3^cm|*e I,%i3[hAgC|#f&OZAOhuQb}:Za_ZAC0uzA3z4HCCv|ciy');
-define('SECURE_AUTH_KEY',  '+ 6)OuTOE}hkz9t%RLT`^+XT4ji-mj#+udeZX0A E:TQI{(v<bhO0:+83l9w@fC}');
-define('LOGGED_IN_KEY',    ';nE{2F3e0<>lUzN@/PW+>,hh:H|`LKAJ+-r;Nq-:.B[*86-g^yIkDr@s|vA+%wy|');
-define('NONCE_KEY',        'zC3w$j}zO-vpknn@+i(}d_PL`L.BtNu^_J)<e+{|$:M_qfTFcmmlq?O]}`WrP@=|');
-define('AUTH_SALT',        'I5CS(?,iv,]>#kd0)57.H@P3*DI-Ft_8MSX|,8=i,~F_pd_`XV|} 2HaV[C xB<A');
-define('SECURE_AUTH_SALT', '2Rho}5> +]+&&{yN=UDRp|/7E3T<dk.A;YDQ{X#o=88&!y(R=U+I1tN1,AM;7|~}');
-define('LOGGED_IN_SALT',   'z&6Mrey[0dz3%?7%9Z4XjoKn|R*TAcot<F&@ng1nm_d8|?R?6PqqcIy^ph(mX(2.');
-define('NONCE_SALT',       't<Tv@6N:,2+`S[!T08wwI$(k)&5&-f*|0j^aDsjL|Z%@n,mC|3Txd~9#{Y4&*=+;');
+define('AUTH_KEY',         'your secret key here');
+define('SECURE_AUTH_KEY',  'your secret key here');
+define('LOGGED_IN_KEY',    'your secret key here');
+define('NONCE_KEY',        'your secret key here');
+define('AUTH_SALT',        'your secret key here');
+define('SECURE_AUTH_SALT', 'your secret key here');
+define('LOGGED_IN_SALT',   'your secret key here');
+define('NONCE_SALT',       'your secret key here');
 
 /**#@-*/
 
