@@ -20,42 +20,24 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
+// Pull in different config files for different environments
+if (strpos($_SERVER['HTTP_HOST'], '.dev') !== false) {
+	$config_file = 'config/wp-config.local.php';
+} else {
+	$config_file = 'config/wp-config.dev.php';
+}
 
-/** MySQL database username */
-define('DB_USER', 'username_here');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'password_here');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+$path = dirname(__FILE__) . '/';
+if (file_exists($path . $config_file)) {
+	// include the config file if it exists, otherwise WP is going to fail
+	require_once $path . $config_file;
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
-
-
-// ** Directory Settings ** //
-// ** These settings should work on CWLA servers, but you may need to change them to run the site locally. ** //
-/** URL of Homepage on your server (usually just '/') - overrides admin dashboard settings */
-define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
-
-/** Location of Wordpress core files - overrides admin dashboard settings */
-define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
-
-/** Location of wp-content directory */
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
-define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content');
-
-/** Location of plugins directory */
-define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins' );
-define('WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins');
-
 
 /**#@+
  * Authentication Unique Keys and Salts
@@ -74,7 +56,6 @@ define('AUTH_SALT',        'your secret key here');
 define('SECURE_AUTH_SALT', 'your secret key here');
 define('LOGGED_IN_SALT',   'your secret key here');
 define('NONCE_SALT',       'your secret key here');
-
 /**#@-*/
 
 
@@ -95,16 +76,6 @@ $table_prefix  = 'wp_';
  * language support.
  */
 define('WPLANG', '');
-
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- */
-define('WP_DEBUG', true);
-
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
