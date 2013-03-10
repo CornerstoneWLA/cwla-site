@@ -165,12 +165,14 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 }
 
 .slide-subtitle {
+	margin: 0;
+	padding: 0;
+}
+
+.slide-subtitle a, .slide-subtitle a:hover {
 	position: absolute;
 	top: 120px;
 	left: 40px;
-}
-
-.slide-subtitle a p, .slide-subtitle a:hover p {
 	font-family: "ChaparralProItalic",Helvetica,Arial,sans-serif;
 	font-size: 22px;
 	color: #fff !important;
