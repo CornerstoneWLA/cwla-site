@@ -25,7 +25,7 @@ $wp_query = new WP_Query($args);
 if(have_posts()) { 
 	$more = 0; ?>
 	<p>LATEST SERMON</p>
-	<div class="latest-sermon" style="margin-bottom:20px;">
+	<!--<div class="latest-sermon" style="margin-bottom:20px;">
 		<div class="sermon-info" style="float:left; width:250px;">
 			<?php $wp_query->the_post(); ?>
 			<div class="left-sermon-info" style="float:left;width:60px;">
@@ -43,9 +43,11 @@ if(have_posts()) {
 			<?php the_content('MORE »'); ?>
 		</div>
 		<br style="clear:both;" />
+	</div>-->
+	<div class="ui360">
+		<a href="//cornerstonewla.org/wp-content/uploads/2013/03/05-The-Coming-of-the-King_-Authority.mp3" class="wpaudio">Sermon</a>
 	</div>
 <?php }
-$shown_categories = array();
 $args=array(
 	'order' => 'DESC',
 	'orderby' => 'date',
@@ -55,33 +57,24 @@ $args=array(
 $temp = $wp_query; // assign orginal query to temp variable for later use  
 $wp_query = null;
 $wp_query = new WP_Query($args); 
+$posts_per_page = get_option('posts_per_page');
 if( have_posts() ) {
     // Declare global $more (before the loop).
-	for ($i = 0; $i < 3 ; ) {
-		if($wp_query->have_posts()) {
-			$wp_query->the_post(); 
-			$more = 0; 
-			$category = get_the_category();
-			if(!in_array($category[0]->cat_name, $shown_categories)) { ?>
-		  		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-					<h4><?php the_category(', ') ?></h4>
-					<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-					<div class="entry" style="float:left;width:490px;">
-		 				<?php the_content('MORE »'); ?>
-					</div>
-					<div class="thumbnail" style="float:right; width:150px;">
-						<?php the_post_thumbnail('thumbnail'); ?>
-					</div>
-					<br style="clear:both;" />
-				<?php $i++; ?>
-				<?php $shown_categories[] = $category[0]->cat_name; ?>
-				<?php if($i == 3) { ?>
-					<a href="">View All Recent Posts</a>
-				<?php } ?>
-				</div>
-			<?php } ?>
-		<?php } ?>
-	<?php } ?>
+	while(have_posts()) : the_post();
+		$more = 0; ?>
+  		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<h4><?php the_category(', ') ?></h4>
+			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			<div class="entry" style="float:left;width:490px;">
+ 				<?php the_content('MORE »'); ?>
+			</div>
+			<div class="thumbnail" style="float:right; width:150px;">
+				<?php the_post_thumbnail('thumbnail'); ?>
+			</div>
+			<br style="clear:both;" />
+		</div>
+	<?php endwhile; ?>
+	<a href="">View All Recent Posts</a>
 	<div class="navigation">
   		
 	</div>
