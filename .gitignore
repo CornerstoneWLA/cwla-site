@@ -15,6 +15,7 @@
 /*
 !.gitignore
 !wp-content/
+!config/
 !index.php
 !wordpress
 !README.md
