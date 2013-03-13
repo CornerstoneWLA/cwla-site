@@ -33,6 +33,8 @@ wp-content/plugins/*
 # !wp-content/plugins/my-directory-plugin/
 !wp-content/plugins/akismet/
 !wp-content/plugins/responsive-slider/
+!wp-content/plugins/wpaudio-mp3-player
+!wp-content/plugins/soundmanagerv297a-20130101
 
 # Ignore everything in the "themes" directory, except the themes you
 # specify (see the commented-out example for a hint on how to do this.)
