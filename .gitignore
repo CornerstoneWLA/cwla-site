@@ -34,7 +34,6 @@ config/*
 !config/wp-config-sample.dev.php
 !config/wp-config-sample.prod.php
 !config/wp-config-sample.salts.php
-!config/wp-salts-sample.php
 
 # Ignore everything in the "plugins" directory, except the plugins you
 # specify (see the commented-out examples for hints on how to do this.)
