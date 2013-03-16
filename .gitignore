@@ -29,6 +29,7 @@ wp-content/*
 
 # Ignore everything in the "config" directory, except the template file
 config/*
+!config/index.php
 !config/wp-config-sample.local.php
 !config/wp-config-sample.dev.php
 !config/wp-config-sample.prod.php
