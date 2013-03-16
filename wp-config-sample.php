@@ -51,7 +51,8 @@ define('DB_COLLATE', '');
  * @since 2.6.0
  */
 
-include('config/wp-salts.php');
+// Pull in salts from separate config file
+include('config/wp-config.salts.php');
 
 /**#@-*/
 

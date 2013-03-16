@@ -21,11 +21,11 @@ define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wordpress');
 
 /** Location of wp-content directory */
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/YOUR_PROJECT_FOLDER/wp-content' );
+define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content' );
 define('WP_CONTENT_URL', '/wp-content');
 
 /** Location of plugins directory */
-define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/YOUR_PROJECT_FOLDER/wp-content/plugins' );
+define('WP_PLUGIN_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content/plugins' );
 define('WP_PLUGIN_URL', '/wp-content/plugins');
 
 /**
