@@ -21,10 +21,12 @@
  */
 
 // Pull in different config files for different environments
-if (strpos($_SERVER['HTTP_HOST'], '.dev') !== false) {
-	$config_file = 'config/wp-config.local.php';
-} else {
+if (strpos($_SERVER['HTTP_HOST'], 'cornerstonewla.org') !== false) {
+	$config_file = 'config/wp-config.prod.php';
+} else if (strpos($_SERVER['HTTP_HOST'], 'dev.cornerstonewla.org') !== false) {
 	$config_file = 'config/wp-config.dev.php';
+} else {
+	$config_file = 'config/wp-config.local.php';
 }
 
 $path = dirname(__FILE__) . '/';
@@ -48,14 +50,9 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'your secret key here');
-define('SECURE_AUTH_KEY',  'your secret key here');
-define('LOGGED_IN_KEY',    'your secret key here');
-define('NONCE_KEY',        'your secret key here');
-define('AUTH_SALT',        'your secret key here');
-define('SECURE_AUTH_SALT', 'your secret key here');
-define('LOGGED_IN_SALT',   'your secret key here');
-define('NONCE_SALT',       'your secret key here');
+
+include('config/wp-salts.php');
+
 /**#@-*/
 
 
