@@ -9,9 +9,9 @@ Getting Started
 If you're totally new to things, you'll first need to [set up Git](https://help.github.com/articles/set-up-git) & familiarize yourself with the basics somewhere like [Git Immersion](http://gitimmersion.com/) or [Pro Git](http://git-scm.com/book/en/Git-Basics).
 
 Once you've got everything set up, just clone our repository & make your first commit:
-		$ git clone git://github.com/CornerstoneWLA/cwla-site.git myproject
-		$ git add .
-		$ git commit -m "Initial commit"
+				$ git clone git://github.com/CornerstoneWLA/cwla-site.git myproject
+				$ git add .
+				$ git commit -m "Initial commit"
 
 Easy peasy!
 
