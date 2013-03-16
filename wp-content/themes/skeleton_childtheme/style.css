@@ -61,6 +61,16 @@ License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
 }
 
 @font-face {
+		font-family: 'ChaparralProSemiBoldItalic';
+		src: url('fonts/ChaparralPro-SemiboldIt.eot');
+		src: url('fonts/ChaparralPro-SemiboldIt.eot?#iefix') format('embedded-opentype'), 
+				 url('fonts/ChaparralPro-SemiboldIt.woff') format('woff'), 
+				 url('fonts/ChaparralPro-SemiboldIt.ttf') format('truetype'); 
+		font-weight: normal;
+		font-style: normal;
+}
+
+@font-face {
     font-family: 'ChaparralProItalic';
     src: url('fonts/chaparralpro-italic-webfont.eot');
     src: url('fonts/chaparralpro-italic-webfont.eot?#iefix') format('embedded-opentype'),
@@ -338,6 +348,8 @@ end REMOVE */
 
 #navigation {
 	position: relative;
+	margin: 8px 0 0 0;
+	padding: 0 0 0 15px;
 }
 
 #navigation ul {

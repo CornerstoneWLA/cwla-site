@@ -53,7 +53,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */
-.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
+.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: right;}
 .flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
 .flex-control-nav li:first-child {margin: 0;}
 .flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(theme/bg_control_nav.png) no-repeat 0 0; cursor: pointer; text-indent: -9999px;}
@@ -63,6 +63,18 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 /*  Responsive Slider
 *****************************************/
+
+.slides-wrapper {
+	//position: relative;
+	//height: 182px;
+	padding: 26px 0 0 0;
+}
+
+.slides {
+	//position: fixed;
+	//left: 0;
+}
+
 .responsive-slider.flexslider {
 	background: transparent !important;
 	border: none !important;
@@ -160,7 +172,6 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 	font-family: "MetaBold",Helvetica,Arial,sans-serif;
 	font-size: 48px;
 	color: #fff !important;
-	text-shadow: -1px 1px 2px #000;
 	text-transform: none;
 }
 
@@ -169,13 +180,16 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 	padding: 0;
 }
 
-.slide-subtitle a, .slide-subtitle a:hover {
+.slide-subtitle a p, .slide-subtitle a:hover p {
 	position: absolute;
 	top: 120px;
 	left: 40px;
-	font-family: "ChaparralProItalic",Helvetica,Arial,sans-serif;
-	font-size: 22px;
+	font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
+	font-size: 20px;
 	color: #fff !important;
-	text-shadow: -1px 1px 2px #000;
 	text-transform: none;
+}
+
+.slide-subtitle a p:after {
+	content: " »";
 }
