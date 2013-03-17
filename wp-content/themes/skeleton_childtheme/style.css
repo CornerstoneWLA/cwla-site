@@ -451,6 +451,7 @@ li.menu-item a:hover {
 	float:left;
 	width:200px;
 	line-height:21px;
+	margin-top:5px;
 }
 
 .latestSermonDetails p {
@@ -483,6 +484,7 @@ li.menu-item a:hover {
 .latestSermonBlurb {
 	float:left;
 	width:350px;
+	margin-top:5px;
 }
 
 .sermonScripture {
