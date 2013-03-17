@@ -17,6 +17,7 @@ License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
 	#Structural Customization
 	#Header
 	#Navigation Bar
+	#Homepage Slider
 	#Typography
 	#Tables
 	#Widgets
@@ -435,6 +436,74 @@ li.menu-item a:hover {
 
 }
 
+
+/* @end */
+
+
+
+/* @group Homepage Slider */
+
+	/* Hide direction arrows */
+	.flex-direction-nav {display: none;}
+
+	.responsive-slider.flexslider .slide {
+		position: relative;
+		margin: 27px 0 0 0;
+	}
+
+	.responsive-slider.flexslider .slide .slide-title {
+		margin: 0;
+		padding: 0;
+	}
+
+	h2.slide {
+		position: relative;
+	}
+
+	.responsive-slider.flexslider .slide-title a {
+		font-family: "MetaBold",Helvetica,Arial,sans-serif;
+		font-size: 48px;
+		color: #fff !important;
+		text-transform: none;
+		position: absolute;
+		left: 0;
+	  bottom: 53px;
+	  width: 700px;
+	  background: none;
+	  line-height: 1em;
+	}
+
+	.responsive-slider.flexslider .slide-title a:hover {
+		color: #fff;
+		background: none;
+	}
+
+	h2.slide-title a, h2.slide-title a:hover {
+		position: absolute;
+		left: 40px;
+	  bottom: 53px;
+	  width: 700px;
+	  background: none;
+	}
+
+	.slide-subtitle {
+		margin: 0;
+		padding: 0;
+	}
+
+	.slide-subtitle a p, .slide-subtitle a:hover p {
+		position: absolute;
+		top: 120px;
+		left: 40px;
+		font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
+		font-size: 21px;
+		color: #fff !important;
+		text-transform: none;
+	}
+
+	.slide-subtitle a p:after {
+		content: " »";
+	}
 
 /* @end */
 

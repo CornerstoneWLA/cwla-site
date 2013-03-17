@@ -243,11 +243,11 @@ function skeleton_setup() {
 			define( 'NO_HEADER_TEXT', true );
 			
 		if ( ! defined( 'HEADER_IMAGE_WIDTH') )
-			define( 'HEADER_IMAGE_WIDTH', apply_filters( 'skeleton_header_image_width',960));
+			define( 'HEADER_IMAGE_WIDTH', apply_filters( 'skeleton_header_image_width',980));
 			
 			
 		if ( ! defined( 'HEADER_IMAGE_HEIGHT') )
-			define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'skeleton_header_image_height',185 ));
+			define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'skeleton_header_image_height',167 ));
 
 		// Add a way for the custom header to be styled in the admin panel that controls
 		// custom headers. See skeleton_admin_header_style(), below.
@@ -740,7 +740,7 @@ function st_navbar() {
 	wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary'));
 	echo '<div class="slides-wrapper">'; // Wrapper for slider positioning
 	do_shortcode( '[responsive_slider]' );
-	echo '</div>'; // End slider wrappers
+	echo '</div>'; // End slider wrapper
 	echo '</div><!--/#navigation-->';
 }
 

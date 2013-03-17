@@ -6,7 +6,7 @@
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
  */
-
+ 
 /* Browser Resets */
 .flex-container a:active,
 .flexslider a:active {outline: none;}
@@ -53,7 +53,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 .flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
 
 /* Control Nav */
-.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: right;}
+.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
 .flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
 .flex-control-nav li:first-child {margin: 0;}
 .flex-control-nav li a {width: 13px; height: 13px; display: block; background: url(theme/bg_control_nav.png) no-repeat 0 0; cursor: pointer; text-indent: -9999px;}
@@ -63,18 +63,6 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 
 /*  Responsive Slider
 *****************************************/
-
-.slides-wrapper {
-	//position: relative;
-	//height: 182px;
-	padding: 26px 0 0 0;
-}
-
-.slides {
-	//position: fixed;
-	//left: 0;
-}
-
 .responsive-slider.flexslider {
 	background: transparent !important;
 	border: none !important;
@@ -165,31 +153,20 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endCol
 	margin: 0;
 	padding: 0;
 }
-.responsive-slider.flexslider .slide-title a, .responsive-slider.flexslider .slide-title a:hover {
+.responsive-slider.flexslider .slide-title a {
 	position: absolute;
-	top: 75px;
-	left: 40px;
-	font-family: "MetaBold",Helvetica,Arial,sans-serif;
-	font-size: 48px;
-	color: #fff !important;
-	text-transform: none;
-}
-
-.slide-subtitle {
+	top: 0;
+	right: 0;
+	font-size: 18px;
+	line-height: 1.3em;
+	color: #fff;
+	background: #222;
+	background: rgba(0,0,0,.3);
+	text-shadow: none;
 	margin: 0;
-	padding: 0;
+	padding: .5em 1em;
 }
-
-.slide-subtitle a p, .slide-subtitle a:hover p {
-	position: absolute;
-	top: 120px;
-	left: 40px;
-	font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
-	font-size: 20px;
-	color: #fff !important;
-	text-transform: none;
-}
-
-.slide-subtitle a p:after {
-	content: " »";
+.responsive-slider.flexslider .slide-title a:hover {
+	color: #fff;
+	background: rgba(0,0,0,.5);
 }
