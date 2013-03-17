@@ -90,6 +90,29 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 <link rel="pingback" href="<?php echo get_option('siteurl') .'/xmlrpc.php';?>" />
 <link rel="stylesheet" id="custom" href="<?php echo home_url() .'/?get_styles=css';?>" type="text/css" media="all" />
 
+<!-- SoundManager 2 -->
+<link rel="stylesheet" type="text/css" href="wp-content/plugins/soundmanager-2/360-player/360player.css">
+
+<!-- required -->
+<!--[if IE]><script type="text/javascript" src="http://sojournchurch.com/wp-content/plugins/sound-manager-2/360-player/script/excanvas.js"></script><![endif]-->
+
+<!-- special IE-only canvas fix -->
+<script type="text/javascript" src="wp-content/plugins/soundmanager-2/360-player/script/berniecode-animator.js"></script>
+<!-- Apache-licensed animation library -->
+<script type="text/javascript" src="wp-content/plugins/soundmanager-2/soundmanager2-nodebug-jsmin.js"></script>
+<!-- SoundManager 2 library -->
+<script type="text/javascript" src="wp-content/plugins/soundmanager-2/360-player/script/360player.js"></script>
+
+<!-- 360 Player core -->
+<!-- configure it for your use -->
+<script type="text/javascript">
+	soundManager.consoleOnly = true;
+	soundManager.debugMode = false;
+	soundManager.url = 'wp-content/plugins/soundmanager-2/'; // path to directory containing SM2 SWF
+	soundManager.flashVersion = 9; // default is 9
+	soundManager.useHighPerformance = true;	
+</script>
+
 <?php
 	/* 
 	 * enqueue threaded comments support.

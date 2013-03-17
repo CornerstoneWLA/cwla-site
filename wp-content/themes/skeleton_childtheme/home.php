@@ -24,28 +24,26 @@ $wp_query = null;
 $wp_query = new WP_Query($args);
 if(have_posts()) { 
 	$more = 0; ?>
-	<p>LATEST SERMON</p>
-	<!--<div class="latest-sermon" style="margin-bottom:20px;">
-		<div class="sermon-info" style="float:left; width:250px;">
-			<?php $wp_query->the_post(); ?>
-			<div class="left-sermon-info" style="float:left;width:60px;">
-				<img src="http://localhost:8888/Cornerstone/trunk/wp-content/uploads/2012/12/playbutton.jpeg" height="50" width="50" />
-			</div>
-			<div class="right-sermon-info" style="float:left;">
-				<p style="margin:0;">True Spirituality</p>
-				<h4 style="margin:0;"><?php the_title_attribute(); ?></h4>
-				<p style="margin-bottom:10px;"><?php the_date(); ?></p>
-				<a href="">View All Sermons</a>
-			</div>
+	<div class="latestSermon">
+		<div class="latestSermonHeader">
+			<p>LATEST SERMON</p>
 		</div>
-		<div class="sermon-excerpt" style="float:right; width:375px;">
-			<b>Colossians 3:12-17</b>
-			<?php the_content('MORE »'); ?>
+		<div class="ui360">
+			<a href="/cwla-site/wp-content/uploads/2013/03/Marissa Ringtone.mp3"></a>
 		</div>
-		<br style="clear:both;" />
-	</div>-->
-	<div class="ui360">
-		<a href="//cornerstonewla.org/wp-content/uploads/2013/03/05-The-Coming-of-the-King_-Authority.mp3" class="wpaudio">Sermon</a>
+		<div class="latestSermonDetails">
+			<p class="sermonSeries">True Spirituality</p>
+			<p class="sermonTitle">The Christ-like Life</p>
+			<p class="sermonDate">August 18, 2011</p>
+			<a href="">View All Sermons</a>
+		</div>
+		<div class="latestSermonBlurb">
+			<div class="latestSermonScripture">
+				<p class="sermonScripture">Colossians 1:7-13</p>
+			</div>
+			<p class="sermonOverview">Jesus is more than a nice example. He's the God who died for our sins. Now, when we trust in Him, our life changes-from the inside out, we live a Christ-like life.</p>
+			<a href="" class="more">MORE »</a>
+		</div>
 	</div>
 <?php }
 $args=array(
