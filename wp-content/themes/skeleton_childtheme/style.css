@@ -474,24 +474,23 @@ li.menu-item a:hover {
 .latestSermonDetails a {
 	font-size:16px;
 	color:#f26522;
-	font-family:'ChaparralProBoldItalic'; /*We have to change this to SemiBoldItalic */
+	font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
 }
 
 .sermonSeries {
 	font-size:16px;
-	font-style:italic;
-	font-family:'ChaparralProBoldItalic'; /*We have to change this to SemiBoldItalic */
+	font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
 }
 
 .sermonTitle {
 	font-size:21px;
-	font-family:'MetaBold';
+	font-family:'MetaBold',Helvetica,Arial,sans-serif;
 }
 
 .sermonDate {
 	font-size:21px;
 	padding-bottom:30px;
-	font-family:'MetaNormal';
+	font-family:'MetaNormal',Helvetica,Arial,sans-serif;
 }
 
 .latestSermonBlurb {
@@ -503,12 +502,12 @@ li.menu-item a:hover {
 .sermonScripture {
 	font-size:14px;
 	line-height:21px;
-	font-family:'MetaBold';
+	font-family:'MetaBold',Helvetica,Arial,sans-serif;
 }
 
 .sermonOverview {
 	font-size:14px;
-	font-family:'MetaNormal';
+	font-family:'MetaNormal',Helvetica,Arial,sans-serif;
 	height:63px;
 	overflow:hidden;
 	padding-bottom:7px;
@@ -516,7 +515,7 @@ li.menu-item a:hover {
 
 .more {
 	font-size:10px;
-	font-family:'MetaBold';
+	font-family:'MetaBold',Helvetica,Arial,sans-serif;
 }
 
 /* @end */
@@ -531,44 +530,24 @@ li.menu-item a:hover {
 		margin: 27px 0 0 0;
 	}
 
-	.responsive-slider.flexslider .slide .slide-title {
-		margin: 0;
-		padding: 0;
-	}
-
-	h2.slide {
-		position: relative;
-	}
-
 	.responsive-slider.flexslider .slide-title a {
+		position: absolute;
+	  top: auto;
+	  right: auto;
+	  bottom: 53px;
+		left: 40px;
+	  width: 700px; /* Adjust up or down if lines are breaking in weird places */
 		font-family: "MetaBold",Helvetica,Arial,sans-serif;
 		font-size: 48px;
 		color: #fff !important;
 		text-transform: none;
-		position: absolute;
-		left: 0;
-	  bottom: 53px;
-	  width: 700px;
-	  background: none;
+	  background: none !important;
 	  line-height: 1em;
+	  padding: 0;
 	}
 
-	.responsive-slider.flexslider .slide-title a:hover {
-		color: #fff;
+	.responsive-slider.flexslider .slide-title a {
 		background: none;
-	}
-
-	h2.slide-title a, h2.slide-title a:hover {
-		position: absolute;
-		left: 40px;
-	  bottom: 53px;
-	  width: 700px;
-	  background: none;
-	}
-
-	.slide-subtitle {
-		margin: 0;
-		padding: 0;
 	}
 
 	.slide-subtitle a p, .slide-subtitle a:hover p {

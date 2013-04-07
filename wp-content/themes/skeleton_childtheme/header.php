@@ -154,7 +154,9 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 	&& ( /* $src, $width, $height */
 	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ))
 	&&
-	$image[1] >= HEADER_IMAGE_WIDTH ) :
+	$image[1] >= HEADER_IMAGE_WIDTH
+	&&
+	!is_front_page() ) : // Only display header image if we aren't on the main page
 	// Houston, we have a new header image!
 	$image_attr = array(
 				'class'	=> "scale-with-grid"
