@@ -269,34 +269,7 @@ body {
 
 /* @group Header */
 
-/* REMOVE?
-#site-title {
-	margin: 0;
-	padding: 0;
-	font-size: 60px;
-	line-height: 55px;
-	letter-spacing: -1px;
-}
-
-#header div#site-title a,
-#header h1#site-title,
-#header h1#site-title a {
-	margin: 0;
-	padding: 0;
-	line-height: 55px;
-	text-decoration: none;
-	font-weight: bold;
-	letter-spacing: -2px;
-	text-shadow: 0px 1px 0px #FFF;
-}
-
-#header #site-title a:hover {
-	color: #3253ad;
-}
-end REMOVE */	
-
 /* Header Tagline */
-
 #header span.site-desc {
 	margin: 0;
 	padding: 0;
@@ -312,7 +285,6 @@ end REMOVE */
 }
 
 /* "Join Us" Text */
-
 #join-us {
 	font-family: "MetaBold",Helvetica,Arial,sans-serif;
 	font-size: 14px;
@@ -330,7 +302,6 @@ end REMOVE */
 }
 
 /* Image Header - also see Images section below */
-
 #header_image {
 }
 
@@ -522,12 +493,37 @@ li.menu-item a:hover {
 
 /* @group Homepage Slider */
 
+	/* Nav Circles */
+	.responsive-slider.flexslider .flex-control-nav {
+		width: 12% !important;
+		min-width: 100px !important;
+		bottom: 8% !important;
+		right: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	.flex-control-nav {
+		text-align: left;
+	}
+
+	/* Floating the li's right guarantees they will have a consistent right margin, but reverses the li order. */
+/*	.flex-control-nav li {
+		float: right;
+	}*/
+
+	.flex-control-nav a {
+		margin: 0 0 0 -3px;
+	}
+
 	/* Hide direction arrows */
-	.flex-direction-nav {display: none;}
+	.flex-direction-nav {
+		display: none;
+	}
 
 	.responsive-slider.flexslider .slide {
 		position: relative;
-		margin: 27px 0 0 0;
+		margin: 0 0 0 0;
 	}
 
 	.responsive-slider.flexslider .slide-title a {
@@ -552,7 +548,9 @@ li.menu-item a:hover {
 
 	.slide-subtitle a p, .slide-subtitle a:hover p {
 		position: absolute;
-		top: 120px;
+		top: auto;
+	  right: auto;
+	  bottom: 0px;
 		left: 40px;
 		font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
 		font-size: 21px;
@@ -563,6 +561,7 @@ li.menu-item a:hover {
 	.slide-subtitle a p:after {
 		content: " »";
 	}
+
 
 /* @end */
 

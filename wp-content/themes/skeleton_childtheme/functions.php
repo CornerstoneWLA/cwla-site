@@ -738,10 +738,10 @@ if ( !function_exists( 'st_navbar' ) ) {
 function st_navbar() {
 	echo '<div id="navigation" class="row sixteen columns">';
 	wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary'));
+	echo '</div><!--/#navigation-->';
 	echo '<div class="slides-wrapper">'; // Wrapper for slider positioning
 	do_shortcode( '[responsive_slider]' );
-	echo '</div>'; // End slider wrapper
-	echo '</div><!--/#navigation-->';
+	echo '</div>'; // End slider wrapper	
 }
 
 } //endif
