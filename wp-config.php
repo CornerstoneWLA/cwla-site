@@ -21,10 +21,10 @@
  */
 
 // Pull in different config files for different environments
-if (strpos($_SERVER['HTTP_HOST'], 'cornerstonewla.org') !== false) {
-	$config_file = 'config/wp-config.prod.php';
-} else if (strpos($_SERVER['HTTP_HOST'], 'dev.cornerstonewla.org') !== false) {
+if (strpos($_SERVER['HTTP_HOST'], 'dev.cornerstonewla.org') !== false) {
 	$config_file = 'config/wp-config.dev.php';
+} else if (strpos($_SERVER['HTTP_HOST'], 'cornerstonewla.org') !== false) {
+	$config_file = 'config/wp-config.prod.php';
 } else {
 	$config_file = 'config/wp-config.local.php';
 }
