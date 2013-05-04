@@ -173,9 +173,15 @@ p code {display: inline;}
 
 body {
 	line-height: 150%;
+	font-size: 16px; /* Base size for em's */
 	background: #ffffff;
 	border-top: 5px solid #ff8b00;
 	-webkit-text-size-adjust: 100%;
+}
+
+.container {
+	width: 100%;
+	max-width: 1280px;
 }
 
 
@@ -201,10 +207,19 @@ body {
 }
 
 /* Main Wrapper */
-
 #wrap {
 	float: left;
-	padding: 0 0 0 38px;
+}
+
+/* Content Wrapper */
+#content {
+	margin: 0 0 0 40px;
+	padding: 0;
+}
+
+/* Sidebar Wrapper */
+#wrap #sidebar {
+	float: left;
 }
 
 /* Footer Styles */
@@ -281,7 +296,8 @@ body {
 
 /* Logo */
 #logo {
-	margin: 20px 0 20px 10px;
+	float: left;
+	margin: 20px 0 20px 40px;
 }
 
 /* "Join Us" Text */
@@ -289,8 +305,8 @@ body {
 	font-family: "MetaBold",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 16px;
-	float: right;
-	margin: 25px 10px 20px 0;
+	float: left;
+	margin: 25px 10px 20px 50px;
 }
 
 #join-us div {
@@ -298,7 +314,17 @@ body {
 }
 
 #join-us div span {
+	text-decoration: none;
+}
+
+#join-us div span#address,
+#join-us div span#services,
+#join-us div span#email-address {
 	text-decoration: underline;
+}
+
+#join-us div span#email-address a {
+	color: #333;
 }
 
 /* Image Header - also see Images section below */
@@ -321,8 +347,8 @@ body {
 
 #navigation {
 	position: relative;
-	margin: 8px 0 0 0;
-	padding: 0 0 0 15px;
+	margin: 15px 0 0 0;
+	padding: 0 0 0 40px;
 }
 
 #navigation ul {
@@ -495,16 +521,16 @@ li.menu-item a:hover {
 
 	/* Nav Circles */
 	.responsive-slider.flexslider .flex-control-nav {
-		width: 12% !important;
+		width: 100% !important;
+		max-width: 960px !important;
 		min-width: 100px !important;
-		bottom: 8% !important;
-		right: 0;
+		left: 0;
 		margin: 0;
 		padding: 0;
 	}
 
-	.flex-control-nav {
-		text-align: left;
+	.flex-control-nav li:first-child {
+		padding-left: 92% !important;
 	}
 
 	/* Floating the li's right guarantees they will have a consistent right margin, but reverses the li order. */
@@ -532,7 +558,7 @@ li.menu-item a:hover {
 	  right: auto;
 	  bottom: 53px;
 		left: 40px;
-	  width: 700px; /* Adjust up or down if lines are breaking in weird places */
+	  max-width: 700px; /* Adjust up or down if lines are breaking in weird places */
 		font-family: "MetaBold",Helvetica,Arial,sans-serif;
 		font-size: 48px;
 		color: #fff !important;
@@ -556,6 +582,7 @@ li.menu-item a:hover {
 		font-size: 21px;
 		color: #fff !important;
 		text-transform: none;
+		margin-bottom: 30px;
 	}
 
 	.slide-subtitle a p:after {
@@ -2104,50 +2131,3 @@ img.scale-with-grid {
 .bypostauthor,.gallery-caption {}
 
 /* @end */
-    
-
-    
-/* #Tablet (Portrait)
-================================================== */   
-
-    /* Note: Design for a width of 768px */
-
-    @media only screen and (min-width: 768px) and (max-width: 959px) {
-        //.container { width: 768px; }
-    }
-
-/* @end */
-
-    
-    
-/*  #Mobile (Portrait) 
-================================================== */
-    
-    /* Note: Design for a width of 320px */
-    
-    @media only screen and (max-width: 767px) {
-        //.container { width: 300px; }
-        #footer #credits { padding-left: 38px;	}
-        #footer #footer-social { margin: -10px 0 10px 47px; }       
-        #footer #footer-social img { float: left; padding-left: 0; }       
-                
-    }
-    
-/* @end */
-
-
-    
-/* #Mobile (Landscape)
-================================================== */
-
-    /* Note: Design for a width of 480px */
-    
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
-        //.container { width: 420px; }
-        #footer #credits { padding-left: 38px;	}  
-        #footer #footer-social { margin: -10px 0 10px 47px; }       
-        #footer #footer-social img { float: left; padding-left: 0; }       
-    }
-     
-/* @end */
-

@@ -13,7 +13,7 @@
 /* @group Navigation */
 
 #navigation {
-	margin-bottom: 10px;
+	margin-bottom: 10px !important;
 	clear: both;
 }
 
@@ -80,22 +80,25 @@
 	/* iPad Portrait/Browser */
 	@media only screen and (min-width: 768px) and (max-width: 991px) {
 	
+	/* "Join Us" Text */
+	#join-us div span#header-email { display: none; }
+
 	#navigation ul {border-radius:0px;}
-	#navigation ul li a {font-size: .9em;padding: 10px 15px;}
+	#navigation ul li a {font-size: 18px !important;padding: 0px 25px 0 0 !important;}
 	#navigation ul {min-width: 700px;}
-	#sidebar .widget-container {margin-left: 0px;}
+	/*#sidebar .widget-container {margin-left: 0px;}*/
 	.resize {display: none;}
 	#respond textarea {width:auto;}	
-	
-	/* jigoshop styles */
-	#header .site-desc.text {font-size: 1.25em;}
 	
 	}
 	
 	
 	/* Mobile/Browser */
 	@media only screen and (max-width: 767px) {
-	
+
+	/* "Join Us" Text */
+	#join-us div span#header-email { display: none; }	
+
 	#wrap {}
 	#header .site-desc.text {font-size: 1.25em;}
 	#navigation {margin: 10px 0px;}
@@ -161,7 +164,9 @@
 	}
 	#respond textarea {width:300px;}	
 
-
+  #footer #credits { padding-left: 38px;	}  
+  #footer #footer-social { margin: -10px 0 10px 47px; }       
+  #footer #footer-social img { float: left; padding-left: 0; }  
 	
 	#wrap .products li,.products li.first,.products li.last {
  	float: left;
@@ -189,7 +194,13 @@
 	}
 	
 	/* Mobile Landscape/Browser */
-	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+  #footer #credits { padding-left: 38px;	}  
+  #footer #footer-social { margin: -10px 0 10px 47px; }       
+  #footer #footer-social img { float: left; padding-left: 0; }  
+
+	}
 	
 	/* Anything smaller than standard 960 */
 	@media only screen and (max-width: 959px) {}

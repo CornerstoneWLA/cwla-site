@@ -82,20 +82,18 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri();?>/images/favicon.ico">
 
 <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri();?>/images/apple-touch-icon.png">
-
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri();?>/images/apple-touch-icon-72x72.png" />
-
 <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri();?>/images/apple-touch-icon-114x114.png" />
 
 <link rel="pingback" href="<?php echo get_option('siteurl') .'/xmlrpc.php';?>" />
 <link rel="stylesheet" id="custom" href="<?php echo home_url() .'/?get_styles=css';?>" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/layout.css" type="text/css" media="all">
 
-<!-- SoundManager 2 -->
+<!-- Sound Manager 2
+================================================== -->
 <link rel="stylesheet" type="text/css" href="wp-content/plugins/soundmanager-2/360-player/360player.css">
-
 <!-- required -->
 <!--[if IE]><script type="text/javascript" src="http://sojournchurch.com/wp-content/plugins/sound-manager-2/360-player/script/excanvas.js"></script><![endif]-->
-
 <!-- special IE-only canvas fix -->
 <script type="text/javascript" src="wp-content/plugins/soundmanager-2/360-player/script/berniecode-animator.js"></script>
 <!-- Apache-licensed animation library -->
@@ -103,7 +101,8 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 <!-- SoundManager 2 library -->
 <script type="text/javascript" src="wp-content/plugins/soundmanager-2/360-player/script/360player.js"></script>
 
-<!-- 360 Player core -->
+<!-- 360 Player Core
+================================================== -->
 <!-- configure it for your use -->
 <script type="text/javascript">
 	soundManager.consoleOnly = true;
@@ -141,9 +140,13 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 	<div id="join-us">
 		JOIN US
 		<div>
-			<span>1609 S Barrington Ave Los Angeles, ca 90025</span>&nbsp;&nbsp;&bull;&nbsp;
-			<span>Sunday Mornings 9am &amp; 11am</span>&nbsp;&nbsp;&bull;&nbsp;
-			<span>info@cornerstonewla.org</span>
+			<span id="services">Sunday Mornings 9am &amp; 11am</span>
+			<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+			<span id="address">1609 S Barrington Ave Los Angeles, ca 90025</span>
+			<span id="header-email">
+				<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+				<span id="email-address"><a href="mailto:info@cornerstonewla.org">info@cornerstonewla.org</a></span>
+			</span>
 		</div>
 	</div>
 
