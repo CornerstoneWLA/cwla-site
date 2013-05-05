@@ -746,6 +746,14 @@ function st_navbar() {
 
 } //endif
 
+
+// Adding second nav to theme for Footer Menu
+ register_nav_menus( array(
+ 'primary' => __( 'Primary Menu', 'skeleton_childtheme' ),
+ 'secondary' => __( 'Secondary Menu', 'skeleton_childtheme'),
+ ) );
+
+
 // Before Content - st_before_content($columns);
 // Child Theme Override: child_before_content();
 
@@ -873,27 +881,25 @@ add_action('wp_footer', 'st_footer');
 		$stylesheet_directory = get_bloginfo('stylesheet_directory');
 		// prints copyright notice & links
 		echo '<div id="footer-copy">';
-		echo '<div id="copyright">';
-		echo of_get_option('footer_text');
+			// footer menu
+			wp_nav_menu( array('container_class' => 'menu-footer','theme_location' => 'secondary' ) );
+			// copyright line
+			echo '<div id="copyright">';
+			echo "&copy; 2011-";
+			echo date('Y ');
+			echo "Cornerstone Church West Los Angeles";
+			echo '</div>';	
 		echo '</div>';
-		echo '<span class="footer-link"><a href="#TODO">Affiliations</a></span>';
-		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link"><a href="#TODO">Location &amp; Services</a></span>';
-		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link"><a href="#TODO">Community Groups</a></span>';
-		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link"><a href="#TODO">Equipping Classes</a></span>';
-		echo '<span class="footer-divider">|</span>';
-		echo '<span class="footer-link"><a href="#TODO">Podcast</a></span>';
-		echo '</div>';
+
 		// prints social media links
-		echo '<div id="footer-social" class="container">';
-		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_twitter.gif" alt="Cornerstone WLA on Twitter" /></a>';
-		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_facebook.gif" alt="Cornerstone WLA on Facebook" /></a>';
-		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_vimeo.gif" alt="Cornerstone WLA on Vimeo" /></a>';
-		echo '<a href="#TODO"><img src="'.$stylesheet_directory.'/images/icon_flickr.gif" alt="Cornerstone WLA on Flickr" /></a>';
+		echo '<div id="footer-social">';
+			echo '<a href="http://flickr.com/photos/cornerstonewla" target="_blank"><img src="'.$stylesheet_directory.'/images/icon_flickr.gif" alt="Cornerstone WLA on Flickr" /></a>';
+			echo '<a href="http://vimeo.com/cornerstonewla" target="_blank"><img src="'.$stylesheet_directory.'/images/icon_vimeo.gif" alt="Cornerstone WLA on Vimeo" /></a>';
+			echo '<a href="http://www.facebook.com/cornerstonewla" target="_blank"><img src="'.$stylesheet_directory.'/images/icon_facebook.gif" alt="Cornerstone WLA on Facebook" /></a>';
+			echo '<a href="http://twitter.com/cornerstonewla" target="_blank"><img src="'.$stylesheet_directory.'/images/icon_twitter.gif" alt="Cornerstone WLA on Twitter" /></a>';
 		echo '</div>';
-}
+
+	}
 
 }
 

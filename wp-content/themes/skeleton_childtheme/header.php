@@ -141,10 +141,12 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 		JOIN US
 		<div>
 			<span id="services">Sunday Mornings 9am &amp; 11am</span>
-			<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
-			<span id="address">1609 S Barrington Ave Los Angeles, ca 90025</span>
+			<span id="header-address">
+				<span>&nbsp;&bull;&nbsp;</span>
+				<span id="mailing-address">1609 S Barrington Ave Los Angeles, ca 90025</span>
+			</span>
 			<span id="header-email">
-				<span>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span>
+				<span>&nbsp;&bull;&nbsp;</span>
 				<span id="email-address"><a href="mailto:info@cornerstonewla.org">info@cornerstonewla.org</a></span>
 			</span>
 		</div>
