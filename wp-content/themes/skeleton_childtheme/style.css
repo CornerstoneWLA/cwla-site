@@ -36,6 +36,7 @@ License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
     #Mobile (Landscape)
 */
 
+
 /* @group Font Includes */
 
 @font-face {
@@ -172,7 +173,7 @@ p code {display: inline;}
 body {
 	line-height: 150%;
 	font-size: 16px; /* Base size for em's */
-	background: #ffffff;
+	background: #fff;
 	border-top: 5px solid #ff8b00;
 	-webkit-text-size-adjust: 100%;
 }
@@ -365,12 +366,21 @@ body {
 	font-size: 18px;
 	text-transform: uppercase;
 }
-	
-#navigation ul li {
+
+/* Main nav links */
+.menu-header {
+	height: 30px;
 }
 
-#navigation ul li a {
+#navigation > div > ul > li > a {
 	color: #333;
+	display: block;
+	height: 30px;
+	margin: 10px 0 -20px 0; /* Matches top margin in #navigation ul.sub-menu */
+}
+
+#navigation > div > ul > li > a:hover {
+	background: url(images/up_arrow.png) no-repeat left bottom;
 }
 
 /* Navbar Hover Links */
@@ -389,27 +399,43 @@ body {
 /* Nav Sublevel */
 
 #navigation ul.sub-menu {
-	border: 1px solid blue;
 	position: absolute;
-	margin: 10px 0 0 0;
+	left: 0;
+	right: 0;
+	margin: 20px 0 0 0; /* Matches bottom margin in #navigation > div > ul > li > a */ 
+	padding: 40px;
 	display: block;
-}
-
-#navigation ul.sub-menu li {
-	border: 1px solid purple;
+	width: 900px; /* Subtract left & right padding from 980px width */
+	height: 87px; /* Subtract top & bottom padding from 167px height */
+	z-index: 99999;
+	background-color: #333;
+	-webkit-column-count:	5;
+	-moz-column-count:		5;
+	-o-column-count:			5;
+	column-count:					5;
+	-webkit-column-gap:		10px;
+	-moz-column-gap:			10px;
+	-o-column-gap:				10px;
+	column-gap:						10px;
 }
 
 /* Nav Sublevel Links */
 
+#navigation ul.sub-menu li {
+	float: none;
+	padding: 0 0 8px 0;
+}
+
 #navigation ul.sub-menu li a {
-	background: #f0f0f0;
 	position: static;
+	color: #fdb270;
+	display: block;
 }
 
 /* Nav Sublevel Hover */
 
 #navigation ul.sub-menu li a:hover {
-	background: #fff;
+	color: #fff;
 	border-bottom: none;
 }
 

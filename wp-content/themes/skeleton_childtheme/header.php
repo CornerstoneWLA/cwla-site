@@ -88,6 +88,8 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 <link rel="pingback" href="<?php echo get_option('siteurl') .'/xmlrpc.php';?>" />
 <link rel="stylesheet" id="custom" href="<?php echo home_url() .'/?get_styles=css';?>" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/layout.css" type="text/css" media="all">
+<!-- CSS Column support for IE 9 or earlier -->
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri();?>/javascripts/css3-multi-column.js"></script>
 
 <!-- Sound Manager 2
 ================================================== -->

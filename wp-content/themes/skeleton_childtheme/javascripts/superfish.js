@@ -87,7 +87,7 @@
 		pathLevels	: 1,
 		delay		: 0,
 		animation	: {opacity:'show'},
-		speed		: 'normal',
+		speed		: 'fast',
 		autoArrows	: false,
 		dropShadows : false,
 		disableHI	: false,		// true disables hoverIntent detection
