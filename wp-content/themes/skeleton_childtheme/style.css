@@ -37,7 +37,6 @@ License URI: http://creativecommons.org/licenses/by-nc-sa/3.0/
 */
 
 
-
 /* @group Font Includes */
 
 @font-face {
@@ -173,9 +172,15 @@ p code {display: inline;}
 
 body {
 	line-height: 150%;
-	background: #ffffff;
+	font-size: 16px; /* Base size for em's */
+	background: #fff;
 	border-top: 5px solid #ff8b00;
 	-webkit-text-size-adjust: 100%;
+}
+
+.container {
+	width: 100%;
+	max-width: 1280px;
 }
 
 
@@ -201,10 +206,19 @@ body {
 }
 
 /* Main Wrapper */
-
 #wrap {
 	float: left;
-	padding: 0 0 0 38px;
+}
+
+/* Content Wrapper */
+#content {
+	margin: 0 0 0 40px;
+	padding: 0;
+}
+
+/* Sidebar Wrapper */
+#wrap #sidebar {
+	float: left;
 }
 
 /* Footer Styles */
@@ -225,38 +239,48 @@ body {
 #footer #footer-copy {
 	color: #fff;
 	text-align: left;
-	padding: 32px 0 32px 47px;	
+	margin: 32px 0 0 40px;
 }
 
 #footer #footer-copy #copyright {
 	font-family: "MetaNormal",Helvetica,Arial,sans-serif;
 	font-size: 14px;
-	line-height: 16px;
-	margin: 0 0 7px 0;
+	margin: -20px 0 25px 0;
 }
 
-#footer #footer-copy .footer-link,
-#footer #footer-copy .footer-link a,
-#footer #footer-copy .footer-link a:visited {
+#footer #footer-copy #menu-footer-menu li {
+	display: inline;
+}
+
+#footer #footer-copy #menu-footer-menu li:after {
+	content:  "|";
+	font-family: "MetaNormal",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+	margin: 0 8px 0 -12px;
+	vertical-align: middle;
+}
+
+#footer #footer-copy #menu-footer-menu li:last-child:after {
+	content:  "";
+}
+
+#footer #footer-copy #menu-footer-menu,
+#footer #footer-copy #menu-footer-menu a,
+#footer #footer-copy #menu-footer-menu a:visited {
 	font-family: "MetaBold",Helvetica,Arial,sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #fff;
 }
 
-#footer #footer-copy .footer-link a:hover {
+#footer #footer-copy #menu-footer-menu a:hover {
 	text-decoration: underline;
-}
-
-#footer #footer-copy .footer-divider {
-	font-family: "MetaNormal",Helvetica,Arial,sans-serif;
-	font-size: 18px;
-	padding: 0 12px 0 12px;
-	vertical-align: middle;
+	cursor: pointer;
 }
 
 #footer #footer-social {
-	margin: -69px 0 69px 0px;
+	margin: -60px 40px 60px 0px;
+	height: 50px;
 }
 
 #footer #footer-social img {
@@ -281,7 +305,8 @@ body {
 
 /* Logo */
 #logo {
-	margin: 20px 0 20px 10px;
+	float: left;
+	margin: 20px 0 20px 40px;
 }
 
 /* "Join Us" Text */
@@ -289,8 +314,8 @@ body {
 	font-family: "MetaBold",Helvetica,Arial,sans-serif;
 	font-size: 14px;
 	line-height: 16px;
-	float: right;
-	margin: 25px 10px 20px 0;
+	float: left;
+	margin: 25px 10px 20px 40px;
 }
 
 #join-us div {
@@ -298,7 +323,17 @@ body {
 }
 
 #join-us div span {
+	text-decoration: none;
+}
+
+#join-us div span#mailing-address,
+#join-us div span#services,
+#join-us div span#email-address {
 	text-decoration: underline;
+}
+
+#join-us div span#email-address a {
+	color: #333;
 }
 
 /* Image Header - also see Images section below */
@@ -321,8 +356,8 @@ body {
 
 #navigation {
 	position: relative;
-	margin: 8px 0 0 0;
-	padding: 0 0 0 15px;
+	margin: 15px 0 0 0;
+	padding: 0 0 0 40px;
 }
 
 #navigation ul {
@@ -331,12 +366,21 @@ body {
 	font-size: 18px;
 	text-transform: uppercase;
 }
-	
-#navigation ul li {
+
+/* Main nav links */
+.menu-header {
+	height: 30px;
 }
 
-#navigation ul li a {
+#navigation > div > ul > li > a {
 	color: #333;
+	display: block;
+	height: 30px;
+	margin: 20px 0 -20px 0; /* Matches top margin in #navigation ul.sub-menu */
+}
+
+#navigation > div > ul > li > a:hover {
+	background: url(images/up_arrow.png) no-repeat left bottom;
 }
 
 /* Navbar Hover Links */
@@ -355,27 +399,43 @@ body {
 /* Nav Sublevel */
 
 #navigation ul.sub-menu {
-	border: 1px solid blue;
 	position: absolute;
-	margin: 10px 0 0 0;
+	left: 0;
+	right: 0;
+	margin: 20px 0 0 0; /* Matches bottom margin in #navigation > div > ul > li > a */ 
+	padding: 40px;
 	display: block;
-}
-
-#navigation ul.sub-menu li {
-	border: 1px solid purple;
+	width: 900px; /* Subtract left & right padding from 980px width */
+	height: 87px; /* Subtract top & bottom padding from 167px height */
+	z-index: 99999;
+	background-color: #333;
+	-webkit-column-count:	5;
+	-moz-column-count:		5;
+	-o-column-count:			5;
+	column-count:					5;
+	-webkit-column-gap:		10px;
+	-moz-column-gap:			10px;
+	-o-column-gap:				10px;
+	column-gap:						10px;
 }
 
 /* Nav Sublevel Links */
 
+#navigation ul.sub-menu li {
+	float: none;
+	padding: 0 0 8px 0;
+}
+
 #navigation ul.sub-menu li a {
-	background: #f0f0f0;
 	position: static;
+	color: #fdb270;
+	display: block;
 }
 
 /* Nav Sublevel Hover */
 
 #navigation ul.sub-menu li a:hover {
-	background: #fff;
+	color: #fff;
 	border-bottom: none;
 }
 
@@ -495,16 +555,16 @@ li.menu-item a:hover {
 
 	/* Nav Circles */
 	.responsive-slider.flexslider .flex-control-nav {
-		width: 12% !important;
+		width: 100% !important;
+		max-width: 960px !important;
 		min-width: 100px !important;
-		bottom: 8% !important;
-		right: 0;
+		left: 0;
 		margin: 0;
 		padding: 0;
 	}
 
-	.flex-control-nav {
-		text-align: left;
+	.flex-control-nav li:first-child {
+		padding-left: 92% !important;
 	}
 
 	/* Floating the li's right guarantees they will have a consistent right margin, but reverses the li order. */
@@ -532,7 +592,7 @@ li.menu-item a:hover {
 	  right: auto;
 	  bottom: 53px;
 		left: 40px;
-	  width: 700px; /* Adjust up or down if lines are breaking in weird places */
+	  max-width: 700px; /* Adjust up or down if lines are breaking in weird places */
 		font-family: "MetaBold",Helvetica,Arial,sans-serif;
 		font-size: 48px;
 		color: #fff !important;
@@ -556,6 +616,7 @@ li.menu-item a:hover {
 		font-size: 21px;
 		color: #fff !important;
 		text-transform: none;
+		margin-bottom: 30px;
 	}
 
 	.slide-subtitle a p:after {
@@ -2104,50 +2165,3 @@ img.scale-with-grid {
 .bypostauthor,.gallery-caption {}
 
 /* @end */
-    
-
-    
-/* #Tablet (Portrait)
-================================================== */   
-
-    /* Note: Design for a width of 768px */
-
-    @media only screen and (min-width: 768px) and (max-width: 959px) {
-        //.container { width: 768px; }
-    }
-
-/* @end */
-
-    
-    
-/*  #Mobile (Portrait) 
-================================================== */
-    
-    /* Note: Design for a width of 320px */
-    
-    @media only screen and (max-width: 767px) {
-        //.container { width: 300px; }
-        #footer #credits { padding-left: 38px;	}
-        #footer #footer-social { margin: -10px 0 10px 47px; }       
-        #footer #footer-social img { float: left; padding-left: 0; }       
-                
-    }
-    
-/* @end */
-
-
-    
-/* #Mobile (Landscape)
-================================================== */
-
-    /* Note: Design for a width of 480px */
-    
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
-        //.container { width: 420px; }
-        #footer #credits { padding-left: 38px;	}  
-        #footer #footer-social { margin: -10px 0 10px 47px; }       
-        #footer #footer-social img { float: left; padding-left: 0; }       
-    }
-     
-/* @end */
-
