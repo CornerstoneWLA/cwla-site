@@ -356,7 +356,7 @@ body {
 
 #navigation {
 	position: relative;
-	margin: 15px 0 0 0;
+	margin: 0;
 	padding: 0 0 0 40px;
 }
 
@@ -376,7 +376,7 @@ body {
 	color: #333;
 	display: block;
 	height: 30px;
-	margin: 20px 0 -20px 0; /* Matches top margin in #navigation ul.sub-menu */
+	margin: 20px 0 -10px 0; /* Matches top margin in #navigation ul.sub-menu */
 }
 
 #navigation > div > ul > li > a:hover {
@@ -402,7 +402,7 @@ body {
 	position: absolute;
 	left: 0;
 	right: 0;
-	margin: 20px 0 0 0; /* Matches bottom margin in #navigation > div > ul > li > a */ 
+	margin: 10px 0 0 0; /* Matches bottom margin in #navigation > div > ul > li > a */ 
 	padding: 40px;
 	display: block;
 	width: 900px; /* Subtract left & right padding from 980px width */
