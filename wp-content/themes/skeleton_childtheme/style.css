@@ -376,7 +376,7 @@ body {
 	color: #333;
 	display: block;
 	height: 30px;
-	margin: 10px 0 -20px 0; /* Matches top margin in #navigation ul.sub-menu */
+	margin: 20px 0 -20px 0; /* Matches top margin in #navigation ul.sub-menu */
 }
 
 #navigation > div > ul > li > a:hover {
