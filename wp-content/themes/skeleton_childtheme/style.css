@@ -337,7 +337,9 @@ body {
 }
 
 /* Image Header - also see Images section below */
-#header_image {
+#header_image img {
+	width: 960px;
+	height: 167px;
 }
 
 #header #site-title.graphic a {
@@ -423,7 +425,7 @@ body {
 
 #navigation ul.sub-menu li {
 	float: none;
-	padding: 0 0 8px 0;
+	padding: 0 0 12px 0;
 }
 
 #navigation ul.sub-menu li a {
@@ -639,10 +641,27 @@ li.menu-item a:hover {
 	text-decoration: none;
 	}
 	
-	h2.entry-title a {
-	font-weight: bold;
+	.entry-title {
+		position: relative;
+		margin: -100px 0 50px 0;
+	  max-width: 700px; /* Adjust up or down if lines are breaking in weird places */
+		font-family: "MetaBold",Helvetica,Arial,sans-serif;
+		font-size: 48px;
+		color: #fff;
+		text-transform: none;
+	  background: none;
+	  line-height: 1em;
 	}
 	
+	.entry-category {
+		position: absolute;
+		margin: -20px 0 0 0;
+	  max-width: 700px; /* Adjust up or down if lines are breaking in weird places */
+		font-family: "ChaparralProSemiBoldItalic",Helvetica,Arial,sans-serif;
+		font-size: 18px;
+		color: #fff;
+		text-transform: none;
+	}
 	
 	h1 {line-height: 140%; margin-bottom: 14px;}
 	h2 {line-height: 130%; margin-bottom: 10px; font-family:"MetaBold",Helvetica,Arial,sans-serif; font-size: 30px;}

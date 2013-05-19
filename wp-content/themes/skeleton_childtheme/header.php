@@ -155,20 +155,16 @@ html.ie #author-info {behavior: url("<?php echo get_stylesheet_directory_uri();?
 	</div>
 
 	<?php st_navbar(); ?>
-	<?php
-	// Check if this is a post or page, if it has a thumbnail, and if it exceeds defined HEADER_IMAGE_WIDTH
-	if ( is_singular() && current_theme_supports( 'post-thumbnails' ) && has_post_thumbnail( $post->ID ) 
-	&& ( /* $src, $width, $height */
-	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ))
-	&&
-	$image[1] >= HEADER_IMAGE_WIDTH
-	&&
-	!is_front_page() ) : // Only display header image if we aren't on the main page
-	// Houston, we have a new header image!
-	$image_attr = array(
-				'class'	=> "scale-with-grid"
-				);
-	echo '<div id="header_image" class="row sixteen columns">'.get_the_post_thumbnail( $post->ID, array("HEADER_IMAGE_WIDTH","HEADER_IMAGE_HEIGHT"), $image_attr ).'</div>';
-	elseif ( get_header_image() ) : ?>
-		<div id="header_image" class="row sixteen columns"><img class="scale-with-grid round" src="<?php header_image(); ?>" alt="" /></div>
-	<?php endif; ?>	
+
+	<!-- Show slider if we're on the homepage -->
+	<?php if ( is_front_page() ): ?>
+		<?php echo '<div class="slides-wrapper">'; // Wrapper for slider positioning
+			do_shortcode( '[responsive_slider]' );
+			echo '</div>'; // End slider wrapper	
+		?>
+	<?php endif; ?>
+
+	<!-- Not on the homepage? Show the featured image instead -->
+	<?php if ( !is_front_page() ): ?>
+		<?php echo '<div id="header_image" class="row sixteen columns">'.get_the_post_thumbnail( $post->ID, array("HEADER_IMAGE_WIDTH","HEADER_IMAGE_HEIGHT"), $image_attr ).'</div>'; ?>
+	<?php endif; ?>

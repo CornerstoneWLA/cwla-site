@@ -72,6 +72,7 @@ if( have_posts() ) {
 			<br style="clear:both;" />
 		</div>
 	<?php endwhile; ?>
+
 	<a href="">View All Recent Posts</a>
 	<div class="navigation">
   		
